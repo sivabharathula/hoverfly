@@ -64,10 +64,10 @@
     <p>Hoverfly is a single binary file. It comes with an optional command line interface tool called hoverctl.</p>
 
     <h2>MacOS</h2>
-    <p>Use <a href="http://brew.sh/" target="_blank">Homebrew</a> to install Hoverfly and hoverctl</a>
+    <p>Use <a href="http://brew.sh/" target="_blank">Homebrew</a> to install Hoverfly and hoverctl:</a>
     <pre>brew install SpectoLabs/tap/hoverfly</pre>
     <h2>Linux</h2>
-    <p>Install Hoverfly and hoverctl with curl</p>
+    <p>Install Hoverfly and hoverctl with curl:</p>
     <pre>curl -o install.sh https://raw.githubusercontent.com/SpectoLabs/hoverfly/master/install.sh && sudo bash install.sh</pre>
     <h2>Windows</h2>
     <p>Download one of the zip files below, extract the Hoverfly and hoverctl binaries, and move them to a directory on your <a href="https://www.java.com/en/download/help/path.xml" target="_blank">PATH</a></p>
@@ -80,20 +80,30 @@
     </h1>
         <p>To capture traffic between your application and an external service, you will need to configure your OS, browser or application to use Hoverfly as a proxy.</p>
     <h2>MacOS and Linux</h2>
-    <p>Run Hoverfly using hoverctl</p>
+    <p>Run Hoverfly using hoverctl:</p>
     <pre>hoverctl start</pre>
-    <p>Set the HTTP_PROXY and HTTPS_PROXY environment variables
-    <pre>export http_proxy=http://localhost:8500/<br>export https_proxy=https://localhost:8500/</pre>
+    <p>By default, the Hoverfly proxy runs on localhost:8500. Switch Hoverfly to "capture" mode and make a request with cURL, using Hoverfly as a proxy:</p>
+    <pre>hoverctl mode capture<br>curl --proxy http://localhost:8500 http://hoverfly.io/</pre>
+    <p>Hoverfly has captured the request and the response. View the Hoverfly logs:</p>
+    <pre>hoverctl logs</pre>
+    <p>Switch Hoverfly to "simulate" mode" and make the same request:</p>
+    <pre>hoverctl mode simulate<br>curl --proxy http://localhost:8500 http://hoverfly.io/</pre>
+    <p>Hoverfly has returned the captured response.</p>
     <h2>Windows</h2>
-    <p>Open a command prompt and run Hoverfly using hoverctl</p>
+    <p>Open a command prompt and run Hoverfly using hoverctl:</p>
     <pre>hoverctl start</pre>
-    <p>Set the HTTP_PROXY and HTTPS_PROXY environment variables from the command prompt<p>
-    <pre>set http_proxy=http://localhost:8500/<br>set https_proxy=https://localhost:8500/</pre>
+    <p>Configure your application, browser or OS to use the Hoverfly proxy (http://localhost:8500). Switch Hoverfly to "capture" mode:<p>
+    <pre>hoverctl mode capture</pre>
+    <p>Make some requests from your application, browser or OS, then view the Hoverfly logs:</p>
+    <pre>hoverctl logs</pre>
+    <p>Switch Hoverfly to "simulate" mode:</p>
+    <pre>hoverctl mode simulate</pre>
+    <p>Make the same requests from your browser, OS or application. Hoverfly is returning the captured responses.</p>
     <p>More information on proxy settings:</p>
     <ul>
+      <li><a href="http://blog.raido.be/?p=426">Windows proxy settings explained</a></li>
       <li><a href="https://support.mozilla.org/en-US/kb/advanced-panel-settings-in-firefox#w_connection">Firefox proxy settings</a></li>
       <li><a href="https://docs.oracle.com/javase/6/docs/technotes/guides/net/proxies.html">Java Networking and Proxies</a></li>
-      <li><a href="https://curl.haxx.se/docs/httpscripting.html#Host">Using a proxy with cURL</a></li>
     </ul>
     <h1>Next steps</h1>
     <p>The Hoverfly documentation is <a href="https://spectolabs.gitbooks.io/hoverfly/content">available here.</a></p>
@@ -104,6 +114,7 @@
       <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/exporting_and_importing.html">Managing simulation data</a></li>
       <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/using_middleware.html">Using middleware</a></li>
       <li><a href="https://specto.io/blog/hoverfly-junit-api-simulation.html">Using the Hoverfly JUnit rule</a></li>
+      <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/certificate_management.html">Capturing HTTPS traffic</a></li>
     </ul>
     <p>Questions or suggestions? <a href="https://github.com/SpectoLabs/hoverfly/issues">Raise an issue on GitHub!</a></p>
 
