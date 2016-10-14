@@ -36,16 +36,16 @@
     <img src="img/hf-logo-std-r-transparent-medium.png" alt="hoverfly" width="100%">
   </div>
     <h1 class="project-tagline">Dependencies without the sting</h2>
+    <a href="#get-hoverfly" class="btn">Get Hoverfly</a>
+    <a href="#run-hoverfly" class="btn">Run Hoverfly</a>
+    <a href="https://spectolabs.gitbooks.io/hoverfly/content/" class="btn">Read the docs</a>
     <a href="https://github.com/SpectoLabs/hoverfly" class="btn">View on GitHub</a>
-    <a href="https://github.com/SpectoLabs/hoverfly/zipball/master" class="btn">Download .zip</a>
-    <a href="https://github.com/SpectoLabs/hoverfly/tarball/master" class="btn">Download .tar.gz</a>
-    <a href="https://github.com/SpectoLabs/hoverfly/releases" class="btn">Download binaries</a>
 </section>
 
 <section class="main-content">
     <h1>
-        <a id="hoverfly-service-virtualization-for-the-rest-of-us" class="anchor" href="#hoverfly-service-virtualization-for-the-rest-of-us"
-           aria-hidden="true"><span class="octicon octicon-link"></span></a>Service virtualization for the rest of us
+        <a id="what-is-hoverfly" class="anchor" href="#what-is-hoverfly"
+           aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Hoverfly?
     </h1>
 
     <p>Hoverfly is a lightweight, open source <a href="https://en.wikipedia.org/wiki/Service_virtualization">service virtualization</a>
@@ -54,46 +54,48 @@
     <p>Hoverfly is a proxy written in <a href="https://golang.org/">Go</a>. It can capture HTTP(s) traffic between an application
        under test and external services, and then replace the external services. It can also generate synthetic responses on the fly.</p>
 
-    <img src="img/hf_capture.png" alt="Hoverfly capture">
+    <img src="img/hf_main.png" alt="Hoverfly main">
 
     <h1>
-        <a class="anchor"
-           aria-hidden="true"><span class="octicon octicon-link"></span></a>Customize and extend using any language
+        <a id="get-hoverfly" class="anchor" href="#get-hoverfly"
+           aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Hoverfly
     </h1>
 
-    <p>
-        Hoverfly can simulate real-world behavior - such as network latency, timeouts or rate limits - using middleware modules.
-        Middleware modules can be written in any language, so you can use whatever you're comfortable with: Python, Ruby, PHP or
-        even shell scripts. From adding a simple delay to a response, to implementing complex logic that transforms responses, the possibilities are
-        literally endless.
-    </p>
+    <p>Hoverfly is a single binary file. It comes with an optional command line interface tool called hoverctl.</p>
 
-    <img src="img/hf_virtualize.png" alt="Hoverfly virtualize">
+    <h2>MacOS</h2>
+    <p>Use <a href="http://brew.sh/" target="_blank">Homebrew</a> to install Hoverfly and hoverctl</a>
+    <p><pre>brew install SpectoLabs/tap/hoverfly</pre></p>
+    <h2>Windows</h2>
+    <p>Download this zip file, extract the Hoverfly and hoverctl binaries to a directory on your PATH (for example C:\Program Files\)</p>
+    <p><a href="">hoverfly_windows.zip</a>
+    <h2>Linux</h2>
+    <p>Install Hoverfly and hoverctl with curl</p>
+    <p><pre>curl -o install.sh https://raw.githubusercontent.com/SpectoLabs/hoverfly/master/install.sh && sudo bash install.sh</pre></p>
 
     <h1>
-        <a class="anchor"
-           aria-hidden="true"><span class="octicon octicon-link"></span></a>Build synthetic services
+        <a id="run-hoverfly" class="anchor" href="#run-hoverfly"
+           aria-hidden="true"><span class="octicon octicon-link"></span></a>Run Hoverfly
     </h1>
 
-    <p>
-       Imagine a scenario where another team is working on a service but they haven't yet published it. Your software relies
-       on this service. Now you can simply create a snippet in your favourite language with basic rules which define what to return
-       on each request. Hoverfly will then synthesize this service for you. Think of it as super-charged mocking.
-    </p>
+    <p>To capture traffic between your application and an external service, you will need to configure your OS, browser or application to use Hoverfly as a proxy.</p>
+    <p>MacOS or Linux:</p>
+    <p><pre>export http_proxy=http://localhost:8500/<br>export https_proxy=https://localhost:8500/</pre></p>
+    <p>Windows (using cmd.exe):</p>
+    <p><pre>set http_proxy=http://localhost:8500/<br>set https_proxy=https://localhost:8500/</pre></p>
+    <p>Run Hoverfly using hoverctl</p>
+    <p><pre>hoverctl start</pre></p>
+    <h1>Next steps</h1>
+    <p>The Hoverfly documentation is <a href="https://spectolabs.gitbooks.io/hoverfly/content">available here.</a></p>
+    <ul>
+      <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/capturing_traffic.html">Capturing traffic</a></li>
+      <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/simulating_services.html">Simulating services</a></li>
+      <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/simulating_service_latency.html">Simulating service latency</a></li>
+      <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/exporting_and_importing.html">Managing simulation data</a></li>
+      <li><a href="https://spectolabs.gitbooks.io/hoverfly/content/usage/using_middleware.html">Using middleware</a></li>
+    </ul>
+    <p>Questions or suggestions? <a href="https://github.com/SpectoLabs/hoverfly/issues">Raise an issue on GitHub!</a></p>
 
-    <img src="img/hf_synthesize.png" alt="Hoverfly synthesize">
-
-            <h1>
-        <a class="anchor"
-           aria-hidden="true"><span class="octicon octicon-link"></span></a>Modify traffic on the fly
-    </h1>
-
-    <p>
-       Hoverfly allows you to use middleware to modify requests and responses on the fly. This means you can change any part of a request
-       or response in real time without having to describe a service or store requests and responses.
-    </p>
-
-    <img src="img/hf_modify.png" alt="Hoverfly modify">
 
     <footer class="site-footer">
         <span class="site-footer-owner"><a
