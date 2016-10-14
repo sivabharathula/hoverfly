@@ -66,26 +66,30 @@
     <h2>MacOS</h2>
     <p>Use <a href="http://brew.sh/" target="_blank">Homebrew</a> to install Hoverfly and hoverctl</a>
     <pre>brew install SpectoLabs/tap/hoverfly</pre>
-    <h2>Windows</h2>
-    <p>Download one of the zip files below, extract the Hoverfly and hoverctl binaries to a directory on your <a href="https://www.java.com/en/download/help/path.xml" target="_blank">PATH</a></p>
-    <p><a href="downloads/hoverfly_bundle_latest_win_x64.zip">Hoverfly & hoverctl (Windows 64bit)</a>
-    <p><a href="downloads/hoverfly_bundle_latest_win_x86.zip">Hoverfly & hoverctl (Windows 32bit)</a>
     <h2>Linux</h2>
     <p>Install Hoverfly and hoverctl with curl</p>
     <pre>curl -o install.sh https://raw.githubusercontent.com/SpectoLabs/hoverfly/master/install.sh && sudo bash install.sh</pre>
+    <h2>Windows</h2>
+    <p>Download one of the zip files below, extract the Hoverfly and hoverctl binaries, and move them to a directory on your <a href="https://www.java.com/en/download/help/path.xml" target="_blank">PATH</a></p>
+    <p><a href="downloads/hoverfly_bundle_latest_win_x64.zip">Hoverfly & hoverctl (Windows 64bit)</a>
+    <p><a href="downloads/hoverfly_bundle_latest_win_x86.zip">Hoverfly & hoverctl (Windows 32bit)</a>
 
     <h1>
         <a id="run-hoverfly" class="anchor" href="#run-hoverfly"
            aria-hidden="true"><span class="octicon octicon-link"></span></a>Run Hoverfly
     </h1>
+        <p>To capture traffic between your application and an external service, you will need to configure your OS, browser or application to use Hoverfly as a proxy.</p>
+    <h2>MacOS and Linux</h2>
     <p>Run Hoverfly using hoverctl</p>
     <pre>hoverctl start</pre>
-    <p>To capture traffic between your application and an external service, you will need to configure your OS, browser or application to use Hoverfly as a proxy.</p>
-    <p>MacOS or Linux:</p>
+    <p>Set the HTTP_PROXY and HTTPS_PROXY environment variables
     <pre>export http_proxy=http://localhost:8500/<br>export https_proxy=https://localhost:8500/</pre>
-    <p>Windows (using cmd.exe):</p>
+    <h2>Windows</h2>
+    <p>Open a command prompt and run Hoverfly using hoverctl</p>
+    <pre>hoverctl start</pre>
+    <p>Set the HTTP_PROXY and HTTPS_PROXY environment variables from the command prompt<p>
     <pre>set http_proxy=http://localhost:8500/<br>set https_proxy=https://localhost:8500/</pre>
-    <p>More information:</p>
+    <p>More information on proxy settings:</p>
     <ul>
       <li><a href="https://support.mozilla.org/en-US/kb/advanced-panel-settings-in-firefox#w_connection">Firefox proxy settings</a></li>
       <li><a href="https://docs.oracle.com/javase/6/docs/technotes/guides/net/proxies.html">Java Networking and Proxies</a></li>
