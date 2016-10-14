@@ -1,0 +1,7 @@
+p {font-size:16px; line-height:28px; padding:10px 0;}
+ul, ol {padding:20px 0 20px 20px;}
+li {font-size:16px; line-height:22px; padding:5px 0;}
+a {color:#000; text-decoration:none;}
+a:hover,.white .social a:hover, .black .social a:hover {color:#c3996b;}
+a:hover, a:active {outline:none;}
+img {max-width:100%; border:none;}

@@ -15,7 +15,7 @@ body {
   margin-right: auto;}
 
 a {
-  color: #1e6bb8;
+  color: #c3996b;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -114,13 +114,26 @@ a {
   margin-top: 0; }
 .main-content img {
   max-width: 100%; }
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: normal;
-  color: #c3996b; }
+.main-content h1 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #000;
+  line-height: 32px;
+  padding: 10px 0;
+  padding-top: 20px;}
+.main-content h2 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #000;
+  line-height: 28px;}
+.main-content h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #000;
+  line-height: 22px;}
 .main-content p {
-  margin-bottom: 1em; }
+  font-size: 16px;
+  line-height: 28px;}
 .main-content code {
   padding: 2px 4px;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
